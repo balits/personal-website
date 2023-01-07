@@ -1,0 +1,142 @@
+---
+export interface Props {
+	className?: string;
+}
+const { className } = Astro.props;
+---
+
+<div class={"text" +" " + className}>
+	<p class="word">
+		<span class="letter w-1-l-1">b</span>
+		<span class="letter w-1-l-2">a</span>
+		<span class="letter">l</span>
+		<span class="letter">i</span>
+		<span class="letter">t</span>
+		<span class="letter">s</span>
+	</p>
+	<p class="word">
+		<span class="letter">p</span>
+		<span class="letter">e</span>
+		<span class="letter">t</span>
+		<span class="letter">e</span>
+		<span class="letter">r</span>
+	</p>
+	<p class="word">
+		<span class="letter">m</span>
+		<span class="letter">a</span>
+		<span class="letter">r</span>
+		<span class="letter">t</span>
+		<span class="letter">o</span>
+		<span class="letter">n</span>
+	</p>
+</div>
+
+<style>
+	.text {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		width: fit-content;
+		height: fit-content;
+	}
+
+	.text:has(.word:hover) .word:not(:hover) {
+		color: var(--jotaiText);
+		filter: blur(6px);
+		transform: scale(0.80);
+	}
+
+	.word {
+		display: flex;
+		align-items: start;
+
+		text-transform: uppercase;
+		font-weight: 600;
+
+		color: var(--jotaiWhite);
+		cursor: pointer;
+
+		transition-property: all;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.4, 1);
+		transition-duration: 300ms;
+		transition-delay: 75ms;
+	}
+
+	.word:hover {
+		transform: scale(1.2);
+	}
+
+	.letter {
+		display: inline-block;
+		transition-property: all;
+		transition-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
+		transition-duration: 300ms;
+		height: fit-content;
+	}
+
+	.word:hover > .letter {
+		color: var(--jotaiWhite);
+	}
+
+
+	/*=== WORD 1 ==='*/
+	.word:nth-of-type(1):hover > .letter:nth-of-type(1) {
+		transform: rotate(-20deg) translate(-80%, -20%);
+	}
+	.word:nth-of-type(1):hover > .letter:nth-of-type(2) {
+		transform: rotate(10deg) translate(-80%, -60%);
+	}
+	.word:nth-of-type(1):hover > .letter:nth-of-type(3) {
+		transform: rotate(-20deg) translate(-20%, -30%);
+	}
+	.word:nth-of-type(1):hover > .letter:nth-of-type(4) {
+		transform: rotate(20deg) translate(-80%, -80%);
+	}
+	.word:nth-of-type(1):hover > .letter:nth-of-type(5) {
+		transform: rotate(-10deg) translate(10%, 20%);
+	}
+	.word:nth-of-type(1):hover > .letter:nth-of-type(6) {
+		transform: rotate(-20deg) translate(40%, -40%);
+	}
+
+
+
+
+	/*=== WORD 2 ==='*/
+	.word:nth-of-type(2):hover > .letter:nth-of-type(1) {
+		transform: rotate(15deg) translate(-140%, -100%);
+	}
+	.word:nth-of-type(2):hover > .letter:nth-of-type(2) {
+		transform: rotate(15deg) translate(-100%, -50%);
+	}
+	.word:nth-of-type(2):hover > .letter:nth-of-type(3) {
+		transform: rotate(60deg) translate(-60%, -20%);
+	}
+	.word:nth-of-type(2):hover > .letter:nth-of-type(4) {
+		transform: rotate(-30deg) translate(0%, 20%);
+	}
+	.word:nth-of-type(2):hover > .letter:nth-of-type(5) {
+		transform: rotate(-15deg) translate(50%, 40%);
+	}
+
+
+	/*=== WORD 3 ==='*/
+	.word:nth-of-type(3):hover > .letter:nth-of-type(1) {
+		transform: rotate(0deg) translate(-80%, 40%);
+	}
+	.word:nth-of-type(3):hover > .letter:nth-of-type(2) {
+		transform: rotate(0deg) translate(-80%, 0%);
+	}
+	.word:nth-of-type(3):hover > .letter:nth-of-type(3) {
+		transform: rotate(0deg) translate(-20%, -40%);
+	}
+	.word:nth-of-type(3):hover > .letter:nth-of-type(4) {
+		transform: rotate(0deg) translate(20%, -20%);
+	}
+	.word:nth-of-type(3):hover > .letter:nth-of-type(5) {
+		transform: rotate(0deg) translate(10%, 40%);
+	}
+	.word:nth-of-type(3):hover > .letter:nth-of-type(6) {
+		transform: rotate(0deg) translate(40%, 60%);
+	}
+</style>

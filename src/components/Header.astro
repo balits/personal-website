@@ -1,0 +1,41 @@
+---
+export interface Props {
+	path: string;
+}
+const { path } = Astro.props;
+
+const isCurrentPath = (somePath: string) => {
+	return  somePath === path ? "text-primaryWhite font-bold " : ""
+}
+---
+
+<header class="z-30 h-16 px-2  flex justify-between items-center gap-y-8 ">
+		<p class="font-bold text-[2rem] text-primaryWhite ">BPM</p>
+		{// ez az elejen ne jelenjen meg, csak miutan eltunt a nagy cool text hover cucc}
+
+	<div class="flex items-center">
+	<nav class="h-fit flex gap-4 ">
+		<a class={isCurrentPath("") + " cursor-pointer"} href="/">home</a>
+		<a class={isCurrentPath("works") + " cursor-pointer"} href="/works">works</a>
+		<a class={isCurrentPath("source") + " cursor-pointer"} href="/source">source</a>
+	</nav>
+	<button
+		type="button"
+		class="m-4 h-fit p-1 rounded-md border-primaryText border-[1px] hover:text-primaryWhite hover:border-primaryWhite"
+	>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke-width="1.5"
+			stroke="currentColor"
+			class="w-6 h-6"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+		</svg>
+	</button>
+	</div>
+</header>
