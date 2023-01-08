@@ -1,0 +1,10 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AboutView from "../components/AboutView";
+---
+
+<Layout title="about">
+	<main class="mt-[15vh]">
+		<AboutView client:only/>
+	</main>
+</Layout>

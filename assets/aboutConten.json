@@ -1,0 +1,19 @@
+{
+	"Me": [
+		{
+			"heading": "How I started React",
+			"body":"When I first started playing with React, I used the infamous CRA Template, but as that I started learing more about web dev in general I found a tool called Vite. Vite is a modern, superfast build tool, helping you to bundle, create dev servers and the also support Hot Module Reloading."
+		},
+		{
+			"heading": "",
+			"body":""
+		},
+		{
+			"heading": "",
+			"body":""
+		},
+	],
+	"This page": [
+		
+	]
+}
